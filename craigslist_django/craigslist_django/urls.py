@@ -1,7 +1,11 @@
+from django.conf.urls import url, include
 from django.contrib import admin
-from django.urls import path, include 
+from .api import router
+
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('craigslist/', include('craigslist.urls'))  
+    url(r'^admin/', admin.site.urls),
+    # url(r'^api/', include(router.urls))
+    url(r'^', include(router.urls))
+
 ]

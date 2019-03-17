@@ -3,10 +3,6 @@ from django.utils import timezone
 
 class Category(models.Model):
   category_name = models.CharField(max_length=255)
-  # price = models.CharField(max_length=10)
-  # varietal = models.CharField(max_length=255)
-  # description = models.TextField()
-  # created_at = models.DateTimeField(default=timezone.now)
 
   def __str__(self):
     return self.category_name 
@@ -21,4 +17,4 @@ class Post(models.Model):
   created_at = models.DateTimeField(default=timezone.now)
 
   def __str__(self):
-    return self.post_title 
+    return f'{self.post_title} for ${self.price}'

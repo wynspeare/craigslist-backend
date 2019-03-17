@@ -17,5 +17,6 @@ router = ExtendedSimpleRouter()
                     parents_query_lookups=['posts'])
 )
 router.register(r'posts', PostViewSet, basename='post')
+# router.register(r'posts', PostViewSet, basename='post')
 
 urlpatterns = router.urls
